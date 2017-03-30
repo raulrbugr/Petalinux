@@ -1,0 +1,47 @@
+(c) Copyright 2012-2016 Xilinx, Inc. All Rights Reserved.
+#-----------------------------------------------------------
+# Tool version  : sds++ 2016.2 SW Build on Jul 15 2016 19:20:29
+# Start time    : Tue Mar 07 12:00:10 +0100 2017
+# Command line  : sds++ -o LinuxPlatform.elf ./src/main.o -dmclkid 0 -sds-pf {G:\zybo_hdmi_in}
+# Log file      : G:/LinuxPlatform/SDDebug/_sds/reports/sds.log
+# Journal file  : G:/LinuxPlatform/SDDebug/_sds/reports/sds.jou
+# Report file   : G:/LinuxPlatform/SDDebug/_sds/reports/sds.rpt
+#-----------------------------------------------------------
+
+Libraries: zybo_led
+Library Paths G:/zybo_hdmi_in/arm-xilinx-linux-gnueabi/lib
+Searching for static library libzybo_led.a
+Library libzybo_led.a found in G:/zybo_hdmi_in/arm-xilinx-linux-gnueabi/lib/libzybo_led.a
+arm-linux-gnueabihf-ar t G:/zybo_hdmi_in/arm-xilinx-linux-gnueabi/lib/libzybo_led.a
+Library objects: uio_axi_gpio.o
+arm-linux-gnueabihf-ar xov G:/zybo_hdmi_in/arm-xilinx-linux-gnueabi/lib/libzybo_led.a
+x - uio_axi_gpio.o
+arm-linux-gnueabihf-objcopy -O binary --set-section-flags .xdinfo=alloc --only-section=.xdinfo G:/LinuxPlatform/SDDebug/_sds/.libs/zybo_led/uio_axi_gpio.o G:/LinuxPlatform/SDDebug/_sds/.data/xdinfo.xml
+arm-linux-gnueabihf-objcopy -O binary --set-section-flags .xddata=alloc --only-section=.xddata G:/LinuxPlatform/SDDebug/_sds/.libs/zybo_led/uio_axi_gpio.o G:/LinuxPlatform/SDDebug/_sds/.data/xddata.xml
+INFO: [SDSoC 0-0] Analyzing object files
+arm-linux-gnueabihf-objcopy -O binary --set-section-flags .xdinfo=alloc --only-section=.xdinfo G:/LinuxPlatform/SDDebug/src/main.o G:/LinuxPlatform/SDDebug/_sds/.data/xdinfo.xml
+arm-linux-gnueabihf-objcopy -O binary --set-section-flags .xddata=alloc --only-section=.xddata G:/LinuxPlatform/SDDebug/src/main.o G:/LinuxPlatform/SDDebug/_sds/.data/xddata.xml
+build_xd_ip_db  -sds-pf G:/zybo_hdmi_in/zybo_hdmi_in_hw.pfm    -o G:/LinuxPlatform/SDDebug/_sds/.cdb/xd_ip_db.xml  
+INFO: Using user-defined path for XILINX_XD environment variable C:/Xilinx/SDSoC/2016.2
+INFO: [SDSoC 0-0] Using prebuilt hardware
+INFO: [SDSoC 0-0] Skipping block diagram (BD), address map, port information and device registration for partition 0
+INFO: [SDSoC 0-0] Prepare hardware access API functions
+INFO: [SDSoC 0-0] Create accelerator stub functions
+INFO: [SDSoC 0-0] Compile hardware access API functions
+arm-linux-gnueabihf-gcc     -I G:/zybo_hdmi_in/arm-xilinx-linux-gnueabi/include  -I C:/Xilinx/SDSoC/2016.2/aarch32-linux/include  -I C:/Xilinx/SDSoC/2016.2/Vivado_HLS/2016.2/include -c  G:/LinuxPlatform/SDDebug/_sds/swstubs/devreg.c
+arm-linux-gnueabihf-gcc      -I G:/zybo_hdmi_in/arm-xilinx-linux-gnueabi/include  -I C:/Xilinx/SDSoC/2016.2/aarch32-linux/include  -I C:/Xilinx/SDSoC/2016.2/Vivado_HLS/2016.2/include -c  G:/LinuxPlatform/SDDebug/_sds/swstubs/portinfo.c
+arm-linux-gnueabihf-g++     -I G:/zybo_hdmi_in/arm-xilinx-linux-gnueabi/include  -I C:/Xilinx/SDSoC/2016.2/aarch32-linux/include  -I C:/Xilinx/SDSoC/2016.2/Vivado_HLS/2016.2/include -c  G:/LinuxPlatform/SDDebug/_sds/swstubs/cf_stub.c
+arm-linux-gnueabihf-ar crs G:/LinuxPlatform/SDDebug/_sds/swstubs/libxlnk_stub.a G:/LinuxPlatform/SDDebug/_sds/swstubs/devreg.o G:/LinuxPlatform/SDDebug/_sds/swstubs/portinfo.o G:/LinuxPlatform/SDDebug/_sds/swstubs/cf_stub.o
+INFO: [SDSoC 0-0] Compile accelerator stub functions
+arm-linux-gnueabihf-ar crs G:/LinuxPlatform/SDDebug/_sds/swstubs/libLinuxPlatform.a G:/LinuxPlatform/SDDebug/_sds/swstubs/devreg.o G:/LinuxPlatform/SDDebug/_sds/swstubs/portinfo.o G:/LinuxPlatform/SDDebug/_sds/swstubs/cf_stub.o 
+INFO: [SDSoC 0-0] Link application ELF file
+arm-linux-gnueabihf-g++     G:/LinuxPlatform/SDDebug/src/main.o G:/LinuxPlatform/SDDebug/_sds/swstubs/devreg.o G:/LinuxPlatform/SDDebug/_sds/swstubs/portinfo.o    -L G:/zybo_hdmi_in/arm-xilinx-linux-gnueabi/lib -L C:/Xilinx/SDSoC/2016.2/aarch32-linux/lib -LG:/LinuxPlatform/SDDebug/_sds/swstubs -Wl,--start-group  -Wl,--end-group -Wl,--start-group   -lzybo_led  -lpthread -lsds_lib -lxlnk_stub  -Wl,--end-group -o G:/LinuxPlatform/SDDebug/_sds/swstubs/LinuxPlatform.elf
+arm-linux-gnueabihf-objcopy -R .xdinfo -R .xddata -R .xdasm -R .xdfcnmap -R .xdhlscore -R .xdif -R .xdparams -R .xdcore -R .xdsdata -R .xdpp G:/LinuxPlatform/SDDebug/_sds/swstubs/LinuxPlatform.elf
+INFO: [SDSoC 0-0] Enable generation of boot files
+INFO: [SDSoC 0-0] Calling system_linker for partition 0
+system_linker -cf-input G:/LinuxPlatform/SDDebug/_sds/.llvm/apsys_0.xml -cf-output-dir _sds/p0 -ip-db G:/LinuxPlatform/SDDebug/_sds/.cdb/xd_ip_db.xml -ip-repo G:/LinuxPlatform/SDDebug/_sds/iprepo/repo -sds-pf G:/zybo_hdmi_in:linux   -bit-name LinuxPlatform.elf.bit -boot-files   -mdev-no-swgen -mdev-no-xsd -mdev-no-swgen -mdev-no-xsd -sdsoc -sd-output-dir _sds/p0/sd_card -bit-binary -elf G:/LinuxPlatform/SDDebug/_sds/swstubs/LinuxPlatform.elf
+system_linker started at Tue Mar 07 12:00:18 +0100 2017
+INFO: [SDSoC 0-0] Creating boot files
+system_linker completed at Tue Mar 07 12:00:23 +0100 2017
+sds++ log file saved as G:/LinuxPlatform/SDDebug/_sds/reports/sds.log
+sds++ completed at Tue Mar 07 12:00:23 +0100 2017
